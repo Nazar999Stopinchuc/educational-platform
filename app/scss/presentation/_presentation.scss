@@ -1,0 +1,138 @@
+.presentation {
+  padding-top: 100px;
+
+  &__video {
+    position: relative;
+    height: 440px;
+    width: 780px;
+    border-radius: 20px;
+    @extend %bg;
+    margin: 0 auto 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: $screen-color;
+      opacity: .4;
+      z-index: 100;
+      border-radius: inherit;
+    }
+  }
+
+  &__btn-wrap {
+    height: 102px;
+    width: 103px;
+    border-radius: 50%;
+    background: linear-gradient(to right, $gradient-from, $gradient-to);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: scale 0.3s;
+    z-index: 200;
+
+    &:hover {
+      scale: 1.2;
+    }
+
+    &:active {
+      scale: 1.1;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: block;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: $accent-title-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: '';
+      @extend %bg;
+      position: absolute;
+      height: 52px;
+      width: 45px;
+      top: 50%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      background-image: url(../images/presentation/triangle.png);
+    }
+  }
+
+  &__descr {
+    @extend %montserrat-700;
+    font-size: 24px;
+    margin-bottom: 42px;
+    max-width: 750px;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+  }
+
+  &__numb {
+    position: relative;
+    font-size: 86px;
+    margin-bottom: 5px;
+    @extend %montserrat-700;
+    background: linear-gradient(to right,
+        $gradient-from,
+        $gradient-to);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__name {
+    font-size: 20px;
+    @extend %montserrat-500;
+  }
+
+  &__icons {
+    position: absolute;
+    z-index: -1;
+
+    &--1,
+    &--2 {
+      fill: $accent-title-color;
+    }
+
+    &--1 {
+      height: 230px;
+      width: 230px;
+      top: 80%;
+      left: 90%;
+    }
+
+    &--2 {
+      height: 135px;
+      width: 165px;
+      top: -18%;
+      left: -11%;
+    }
+
+    &--3 {
+      height: 130px;
+      width: 230px;
+      top: 70%;
+      left: -23%;
+      transform: rotateZ(-90deg);
+    }
+
+    &--4 {
+      height: 350px;
+      width: 350px;
+      top: -15%;
+      left: 85%;
+    }
+  }
+}

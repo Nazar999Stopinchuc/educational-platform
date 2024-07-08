@@ -1,0 +1,46 @@
+$accent-text-color: #000000;
+$accent-bg-color: #00093C;
+$stars-color: #27AAE1;
+$accent-text-color_second: #333333;
+$accent-title-color: #ffffff;
+$body-background-color: #e5e5e5;
+$gradient-from: #F7941D;
+$gradient-to: #27AAE1;
+$border-color: #E0E0E0;
+$symbol-color: #4F4F4F;
+$symbol-color-second: #BDBDBD;
+$screen-color: #00093C;
+$open-day-color: #F7BC75;
+$programs-color: #C5DDFF;
+$news-color: #B8EFCF;
+$it-color: #FFEEF6;
+$try-color: #FFE38E;
+$input-bg: rgba(0, 9, 60, .1);
+$btn-color: #F7941D;
+
+%montserrat-400 {
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+%montserrat-500 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+}
+
+%montserrat-700 {
+  font-family: 'Montserrat';
+  font-weight: 700;
+}
+
+%bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -42,7 +42,7 @@ function styles() {
 }
 
 function scripts() {
-  return src(['app/js/main.js'])
+  return src([ 'app/js/main.js'])
     .pipe(webpack({
       mode: 'development',
       output: {

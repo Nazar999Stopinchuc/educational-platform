@@ -1,0 +1,35 @@
+.header {
+  background-color: $accent-title-color;
+  padding: 20px 0;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 75px;
+  font-size: 14px;
+  @extend %montserrat-500;
+
+  &__wrap {
+    @extend %flex-center;
+    flex-grow: 1;
+  }
+}
+
+.page-navigation {
+  &__link {
+    position: relative;
+  }
+}
+
+.contacts {
+  &__location {
+    position: relative;
+  }
+}
+
+.page-navigation,
+.contacts {
+  @extend %flex-center;
+  gap: 40px;
+}

@@ -1,0 +1,64 @@
+.footer {
+  background-color: $accent-bg-color;
+  color: $accent-title-color;
+  padding: 70px 0;
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    gap: 85px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__logo {
+    margin-bottom: 23px;
+  }
+
+  &__link {
+    font-size: 14px;
+    @extend %montserrat-500;
+  }
+
+  &__social {
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__icon {
+    height: 21px;
+    width: 26px;
+    fill: $accent-title-color;
+  }
+
+  &__copy {
+    color: $symbol-color-second;
+    font-size: 12px;
+  }
+
+  &__categories {
+    display: flex;
+    gap: 60px;
+  }
+
+  &__title {
+    text-wrap: nowrap;
+    margin-bottom: 15px;
+    font-size: 16px;
+    @extend %montserrat-700;
+  }
+
+  &__item {
+    cursor: pointer;
+    text-wrap: nowrap;
+    font-size: 14px;
+    @extend %montserrat-500;
+    margin-bottom: 15px;
+  }
+}

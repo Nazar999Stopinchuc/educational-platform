@@ -1,0 +1,107 @@
+.reviews {
+  position: relative;
+  background-color: $accent-bg-color;
+  padding: 62px 0;
+
+  &__title {
+    font-size: 36px;
+    @extend %montserrat-700;
+    color: $accent-title-color;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__card {
+    position: relative;
+    background-color: $accent-title-color;
+    border-radius: 20px;
+    padding: 20px;
+    z-index: 100;
+    transition: scale 0.3s;
+
+    &:hover {
+      scale: 1.1;
+    }
+  }
+
+  &__card-top {
+    display: flex;
+    margin-bottom: 10px;
+  }
+
+  &__user-photo {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+  }
+
+  &__user-name {
+    @extend %montserrat-700;
+    font-size: 16px;
+    text-wrap: nowrap;
+  }
+
+  &__user-descr {
+    color: $symbol-color;
+    font-size: 14px;
+    @include line-clamp(2);
+  }
+
+  &__text {
+    margin-bottom: 20px;
+    font-size: 14px;
+    @extend %montserrat-500;
+  }
+
+  &__rating {
+    position: relative;
+    padding-left: 25px;
+
+    &::before {
+      content: '';
+      background-image: url(../images/reviews/star.png);
+      position: absolute;
+      height: 22px;
+      width: 22px;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+
+  &__grade {
+    color: $symbol-color;
+    font-size: 14px;
+  }
+
+  &__icons {
+    position: absolute;
+
+    &--1 {
+      top: 12%;
+      left: 15%;
+    }
+
+    &--2 {
+      top: 70%;
+      left: 90%;
+    }
+
+    &--3 {
+      top: 70%;
+      left: 50%;
+    }
+
+    &--4 {
+      transform: rotateZ(90deg);
+      top: 70%;
+      left: 0;
+    }
+
+    &--5 {
+      transform: rotateZ(135deg);
+      top: 0;
+      left: 80%;
+    }
+  }
+}
