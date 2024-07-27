@@ -5,83 +5,193 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#fc784e">
+  <meta name="msapplication-TileColor" content="#fc784e">
+  <meta name="theme-color" content="#fc784e">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
 <body>
-  <header class="header">
+  <header class="header" id="header">
     <div class="container">
       <nav class="menu">
 
         <a class="logo" href="#">
-          <img src="images/logo/logo.svg" alt="logo" class="logo__img">
+          <svg class="logo__svg">
+            <use xlink:href="images/sprite.svg#logo-icon"></use>
+          </svg>
         </a>
 
         <div class="menu__wrap">
           <ul class="page-navigation">
             <li class="page-navigation__item">
-              <a class="page-navigation__link linck-animation" href="#">
+              <a class="page-navigation__link linck-animation" href="#categories">
                 <svg class="header-icons">
                   <use xlink:href="images/sprite.svg#column-icon"></use>
                 </svg>
-                All courses
+                Categories
               </a>
             </li>
             <li class="page-navigation__item">
-              <a class="page-navigation__link linck-animation" href="#">
+              <a class="page-navigation__link linck-animation" href="#presentation">
+                Presentation
+              </a>
+            </li>
+            <li class="page-navigation__item">
+              <a class="page-navigation__link linck-animation" href="#info">
                 Events
               </a>
             </li>
             <li class="page-navigation__item">
-              <a class="page-navigation__link linck-animation" href="#">
-                Knowledge bases
+              <a class="page-navigation__link linck-animation" href="#reviews">
+                Reviews
               </a>
             </li>
             <li class="page-navigation__item">
-              <a class="page-navigation__link linck-animation" href="#">
-                Career
+              <a class="page-navigation__link linck-animation" href="#contacts">
+                Contakts
               </a>
             </li>
           </ul>
 
           <ul class="contacts">
             <li class="contacts__item">
-              <a class="contacts__location linck-animation" href="https://maps.app.goo.gl/17NQRJ3ZBuWTaZVi7"
-                target="_blank" rel="noreferrer noopener">
+              <a class="contacts__link contacts__link--location linck-animation"
+                href="https://maps.app.goo.gl/17NQRJ3ZBuWTaZVi7" target="_blank" rel="noreferrer noopener">
                 <svg class="header-icons">
                   <use xlink:href="images/sprite.svg#locations-icon"></use>
                 </svg>
                 Toronto</a>
             </li>
             <li class="contacts__item">
-              <a class="contacts__tel linck-animation" href="tel:4165039081">416-503-9081</a>
+              <a class="contacts__link linck-animation" href="tel:4165039081">416-503-9081</a>
             </li>
           </ul>
         </div>
 
+        <button class="burger" type="button">
+          <span class="burger__line"></span>
+          <span class="sr-only">Открыть меню</span>
+        </button>
+
       </nav>
+
+      <div class="menu-mob">
+        <ul class="page-navigation page-navigation--menu-mob">
+          <li class="page-navigation__item">
+            <a class="page-navigation__link linck-animation" href="#categories">
+              <svg class="header-icons">
+                <use xlink:href="images/sprite.svg#column-icon"></use>
+              </svg>
+              Categories
+            </a>
+          </li>
+          <li class="page-navigation__item">
+            <a class="page-navigation__link linck-animation" href="#presentation">
+              Presentation
+            </a>
+          </li>
+          <li class="page-navigation__item">
+            <a class="page-navigation__link linck-animation" href="#info">
+              Events
+            </a>
+          </li>
+          <li class="page-navigation__item">
+            <a class="page-navigation__link linck-animation" href="#reviews">
+              Reviews
+            </a>
+          </li>
+          <li class="page-navigation__item">
+            <a class="page-navigation__link linck-animation" href="#contacts">
+              Contacts
+            </a>
+          </li>
+        </ul>
+
+        <ul class="contacts contacts--menu-mob">
+          <li class="contacts__item">
+            <a class="contacts__link contacts__link--location linck-animation"
+              href="https://maps.app.goo.gl/17NQRJ3ZBuWTaZVi7" target="_blank" rel="noreferrer noopener">
+              <svg class="header-icons">
+                <use xlink:href="images/sprite.svg#locations-icon"></use>
+              </svg>
+              Toronto</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link linck-animation" href="tel:4165039081">416-503-9081</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts__link" href="https://maps.app.goo.gl/17NQRJ3ZBuWTaZVi7" target="_blank"
+              rel="noreferrer noopener">1
+              De Boers Dr</a>
+          </li>
+          <li class="contacts__item">
+            <a class="contacts" href="mail:info@hodfutureacademy.gmail">info@hodfutureacademy.gmail</a>
+          </li>
+        </ul>
+
+        <ul class="social social--menu-mob">
+          <li class="social__item">
+            <svg class="social__icon social__icon--menu-mob">
+              <use xlink:href="images/sprite.svg#inst-icon"></use>
+            </svg>
+          </li>
+          <li class="social__item">
+            <svg class="social__icon social__icon--menu-mob">
+              <use xlink:href="images/sprite.svg#fb-icon"></use>
+            </svg>
+          </li>
+          <li class="social__item">
+            <svg class="social__icon social__icon--menu-mob">
+              <use xlink:href="images/sprite.svg#youtube-icon"></use>
+            </svg>
+          </li>
+          <li class="social__item">
+            <svg class="social__icon social__icon--menu-mob">
+              <use xlink:href="images/sprite.svg#tg-icon"></use>
+            </svg>
+          </li>
+        </ul>
+      </div>
     </div>
+    <a href="#header" class="scroll-up">
+      <svg class="scroll-up__icon scroll-up__icon--1">
+        <use xlink:href="images/sprite.svg#shyvron-icon"></use>
+      </svg>
+      <svg class="scroll-up__icon scroll-up__icon--2">
+        <use xlink:href="images/sprite.svg#shyvron-icon"></use>
+      </svg>
+      <svg class="scroll-up__icon scroll-up__icon--3">
+        <use xlink:href="images/sprite.svg#shyvron-icon"></use>
+      </svg>
+    </a>
   </header>
 
   <main class="main">
-    <section class="top-screen" style="background-image: url(images/top_screen/top_screen-bg.jpg);">
-      <div class="container">
-        <div class="top-screen__wrap">
-          <div class="top-screen__content">
-            <h1 class="top-screen__title">
-              Educational platform Future Academy
-            </h1>
-            <p class="top-screen__subtitle">
-              Up-to-date knowledge for beginners and professionals
-            </p>
+    <section class="top-screen section" style="background-image: url(images/top_screen/top_screen-bg.jpg);">
+      <div class="top-screen__inner">
+        <div class="container">
+          <div class="top-screen__wrap">
+            <div class="top-screen__content">
+              <h1 class="top-screen__title element-animation show-below">
+                Educational platform Future Academy
+              </h1>
+              <p class="top-screen__subtitle element-animation show-below">
+                Up-to-date knowledge for beginners and professionals
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <div class="top-screen__decor-bg"></div>
 
 
-      <svg class="top-screen__icons top-screen__icons--1" width="131" height="131" viewBox="0 0 131 131" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--1 icon-rotate element-animation" width="131" height="131"
+        viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="paint0_linear_66_15292" x1="0.851563" y1="65.4319" x2="131" y2="65.4319"
             gradientUnits="userSpaceOnUse">
@@ -95,8 +205,8 @@
       </svg>
 
 
-      <svg class="top-screen__icons top-screen__icons--2" width="131" height="131" viewBox="0 0 131 131" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--2 icon-rotate element-animation" width="131" height="131"
+        viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="paint0_linear_66_15292" x1="0.851563" y1="65.4319" x2="131" y2="65.4319"
             gradientUnits="userSpaceOnUse">
@@ -109,8 +219,8 @@
           stroke="url(#paint0_linear_66_15292)" stroke-width="2" />
       </svg>
 
-      <svg class="top-screen__icons top-screen__icons--3" width="120" height="120" viewBox="0 0 120 120" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--3 icon-rotate element-animation" width="120" height="120"
+        viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M60 119C27.4614 119 1 92.5386 1 60C1 27.4614 27.4614 1 60 1C92.5386 1 119 27.4614 119 60C119 92.7185 92.5406 119 60 119Z"
           stroke="url(#paint0_linear_75_2070)" stroke-width="2" />
@@ -122,8 +232,8 @@
         </defs>
       </svg>
 
-      <svg class="top-screen__icons top-screen__icons--4" width="99" height="82" viewBox="0 0 99 82" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--4 icon-rotate element-animation" width="99" height="82"
+        viewBox="0 0 99 82" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M48.082 1.97163L48.082 1.97165L48.0865 1.96414C48.8355 0.715796 50.6238 0.633165 51.5413 1.9895L97.6613 77.3532L97.6663 77.3612C98.5815 78.8255 97.5203 80.7278 95.9371 80.7278H49.8062H3.67521C2.09765 80.7278 1.01752 78.9509 1.95591 77.3452L48.082 1.97163Z"
           stroke="url(#paint0_linear_75_2071)" stroke-width="2" />
@@ -136,8 +246,8 @@
         </defs>
       </svg>
 
-      <svg class="top-screen__icons top-screen__icons--5" width="340" height="133" viewBox="0 0 340 133" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--5 element-animation" width="340" height="133"
+        viewBox="0 0 340 133" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.915527 131.432L81.9998 46.3475H339V0" stroke="url(#paint0_linear_75_2073)" stroke-width="2" />
         <defs>
           <linearGradient id="paint0_linear_75_2073" x1="0.915527" y1="131.432" x2="0.915528" y2="0"
@@ -148,8 +258,8 @@
         </defs>
       </svg>
 
-      <svg class="top-screen__icons top-screen__icons--6" width="310" height="3" viewBox="0 0 310 3" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--6 element-animation" width="310" height="3" viewBox="0 0 310 3"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0.0319824 1.02441H309.408" stroke="url(#paint0_linear_75_2074)" stroke-width="2" />
         <defs>
           <linearGradient id="paint0_linear_75_2074" x1="0.0319824" y1="1.52441" x2="309.408" y2="1.52477"
@@ -160,8 +270,8 @@
         </defs>
       </svg>
 
-      <svg class="top-screen__icons top-screen__icons--7" width="129" height="268" viewBox="0 0 129 268" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="top-screen__icons top-screen__icons--7 element-animation" width="129" height="268"
+        viewBox="0 0 129 268" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M1 0V140L127.589 266.589" stroke="url(#paint0_linear_75_1248)" stroke-width="2" />
         <defs>
           <linearGradient id="paint0_linear_75_1248" x1="1" y1="266.589" x2="1.00001" y2="0"
@@ -174,36 +284,17 @@
 
     </section>
 
-    <section class="categories">
+    <section class="categories section" id="categories">
       <div class="container">
         <div class="categories__cover">
           <div class="categories__clue">
             <img class="categories__owl element-animation" src="images/categories/owl.png" alt="owl">
 
-            <div class="categories__wrap element-animation">
-              <svg class="categories__clue-svg" width="262" height="220" viewBox="0 0 262 220" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd"
-                  d="M21 1C9.95431 1 1 9.95431 1 21V171C1 182.046 9.9543 191 21 191H141V216.839C141 218.516 142.94 219.448 144.249 218.4L178.5 191H241C252.046 191 261 182.046 261 171V21C261 9.95431 252.046 1 241 1H21Z"
-                  fill="white" />
-                <path
-                  d="M141 191H142V190H141V191ZM144.249 218.4L143.625 217.62L144.249 218.4ZM178.5 191V190H178.149L177.875 190.219L178.5 191ZM2 21C2 10.5066 10.5066 2 21 2V0C9.40202 0 0 9.40202 0 21H2ZM2 171V21H0V171H2ZM21 190C10.5066 190 2 181.493 2 171H0C0 182.598 9.40202 192 21 192V190ZM141 190H21V192H141V190ZM140 191V216.839H142V191H140ZM140 216.839C140 219.354 142.91 220.753 144.874 219.181L143.625 217.62C142.97 218.143 142 217.677 142 216.839H140ZM144.874 219.181L179.125 191.781L177.875 190.219L143.625 217.62L144.874 219.181ZM241 190H178.5V192H241V190ZM260 171C260 181.493 251.493 190 241 190V192C252.598 192 262 182.598 262 171H260ZM260 21V171H262V21H260ZM241 2C251.493 2 260 10.5066 260 21H262C262 9.40202 252.598 0 241 0V2ZM21 2H241V0H21V2Z"
-                  fill="url(#paint0_linear_64_4047)" />
-                <defs>
-                  <linearGradient id="paint0_linear_64_4047" x1="1" y1="109.921" x2="261" y2="109.921"
-                    gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#F7941D" />
-                    <stop offset="1" stop-color="#27AAE1" />
-                  </linearGradient>
-                </defs>
-              </svg>
-
-              <div class="categories__clue-content">
-                <h3 class="categories__clue-title">What do you want to become?</h3>
-                <p>It's time to find yourself
-                  and choose the appropriate course :)</p>
-                <span>Good luck!</span>
-              </div>
+            <div class="categories__clue-content element-animation">
+              <h3 class="categories__clue-title">What do you want to become?</h3>
+              <p>It's time to find yourself
+                and choose the appropriate course :)</p>
+              <span>Good luck!</span>
             </div>
 
 
@@ -212,22 +303,28 @@
           <div class="categories__content">
             <ul class="categories__control">
               <li class="categories__control-item categories__control-item--active" data-filter="children">
+                <div class="categories__control-img categories__control-img--1 bounce-anim"
+                  style="background-image: url(images/categories/children.png);"></div>
                 <h3 class="categories__control-title">Children</h3>
                 <span class="categories__control-age">8 – 14 years</span>
               </li>
               <li class="categories__control-item" data-filter="teenagers">
+                <div class="categories__control-img categories__control-img--2 bounce-anim"
+                  style="background-image: url(images/categories/teenagers.png);"></div>
                 <h3 class="categories__control-title">Teenagers</h3>
                 <span class="categories__control-age">14 – 18 years</span>
               </li>
               <li class="categories__control-item" data-filter="adults">
+                <div class="categories__control-img categories__control-img--3 bounce-anim"
+                  style="background-image: url(images/categories/adults.png);"></div>
                 <h3 class="categories__control-title">Adults</h3>
                 <span class="categories__control-age">18 – ∞</span>
               </li>
             </ul>
 
             <ul class="categories__options element-animation">
-              <li class="categories__options-item children teenagers" data-filter="children">
-                <button class="categories__options-btn btn-animation" type="button">Robotics</button>
+              <li class="categories__options-item children teenage" data-filter="children">
+                <button class="categories__options-btn btn-animation element-animation" type="button">Robotics</button>
               </li>
               <li class="categories__options-item children teenagers">
                 <button class="categories__options-btn btn-animation" type="button">Game creation</button>
@@ -260,147 +357,162 @@
       </div>
     </section>
 
-    <section class="presentation">
+    <section class="presentation section" id="presentation">
       <div class="container">
-        <div class="presentation__video" style="background-image: url(images/presentation/presentation-video.jpg);">
-          <div class="presentation__btn-wrap">
-            <a class="presentation__btn" href="#">
-              <div class="presentation__btn-triangle"></div>
-            </a>
+        <div class="presentation__video-wrap element-animation">
+          <div class="presentation__video" style="background-image: url(images/presentation/presentation-video.jpg);">
+            <div class="presentation__btn-wrap">
+              <a class="presentation__btn" href="#">
+                <div class="presentation__btn-triangle"></div>
+              </a>
+            </div>
+
+            <svg class="presentation__icons presentation__icons--1 element-animation icon-rotate" width="131"
+              height="131" viewBox="0 0 131 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="paint0_linear_66_15292" x1="0.851563" y1="65.4319" x2="131" y2="65.4319"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F7941D" />
+                  <stop offset="1" stop-color="#27AAE1" />
+                </linearGradient>
+              </defs>
+              <path
+                d="M128.848 33.2513L128.828 33.2689L128.81 33.2875L100.734 61.3636C98.5638 63.5336 98.5638 67.3302 100.734 69.5002L128.81 97.5763C130.199 98.9652 130.199 101.496 128.81 102.884L103.304 128.39C101.915 129.779 99.3849 129.779 97.996 128.39L69.9199 100.314C67.7499 98.1442 63.9532 98.1442 61.7832 100.314L33.7072 128.39C32.3182 129.779 29.7879 129.779 28.399 128.39L2.89327 102.884C1.50433 101.496 1.50433 98.9652 2.89327 97.5763L30.9693 69.5002C33.1393 67.3302 33.1393 63.5336 30.9693 61.3636L2.89327 33.2875C1.50433 31.8986 1.50433 29.3682 2.89327 27.9793L28.399 2.47359C29.7879 1.08465 32.3182 1.08465 33.7072 2.47359L61.7832 30.5496C63.9532 32.7196 67.7499 32.7196 69.9199 30.5496L97.996 2.47359C99.3849 1.08465 101.915 1.08465 103.304 2.47359L128.81 27.9793C130.418 29.5878 130.362 31.8888 128.848 33.2513Z"
+                stroke="url(#paint0_linear_66_15292)" stroke-width="2" />
+            </svg>
+
+            <svg class="presentation__icons presentation__icons--2 element-animation icon-rotate" width="99" height="82"
+              viewBox="0 0 99 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M48.082 1.97163L48.082 1.97165L48.0865 1.96414C48.8355 0.715796 50.6238 0.633165 51.5413 1.9895L97.6613 77.3532L97.6663 77.3612C98.5815 78.8255 97.5203 80.7278 95.9371 80.7278H49.8062H3.67521C2.09765 80.7278 1.01752 78.9509 1.95591 77.3452L48.082 1.97163Z"
+                stroke="url(#paint0_linear_75_2071)" stroke-width="2" />
+              <defs>
+                <linearGradient id="paint0_linear_75_2071" x1="0.612305" y1="40.8639" x2="99" y2="40.8639"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F7941D" />
+                  <stop offset="1" stop-color="#27AAE1" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <svg class="presentation__icons presentation__icons--3 element-animation" width="129" height="268"
+              viewBox="0 0 129 268" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 0V140L127.589 266.589" stroke="url(#paint0_linear_75_1248)" stroke-width="2" />
+              <defs>
+                <linearGradient id="paint0_linear_75_1248" x1="1" y1="266.589" x2="1.00001" y2="0"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F7941D" />
+                  <stop offset="1" stop-color="#27AAE1" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <svg class="presentation__icons presentation__icons--4 element-animation" width="352" height="351"
+              viewBox="0 0 352 351" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 0V180H181L351 350" stroke="url(#paint0_linear_64_4054)" stroke-width="2" />
+              <defs>
+                <linearGradient id="paint0_linear_64_4054" x1="1" y1="175" x2="351" y2="175"
+                  gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#F7941D" />
+                  <stop offset="1" stop-color="#27AAE1" />
+                </linearGradient>
+              </defs>
+            </svg>
           </div>
-
-          <svg class="presentation__icons presentation__icons--1" width="131" height="131" viewBox="0 0 131 131"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="paint0_linear_66_15292" x1="0.851563" y1="65.4319" x2="131" y2="65.4319"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#F7941D" />
-                <stop offset="1" stop-color="#27AAE1" />
-              </linearGradient>
-            </defs>
-            <path
-              d="M128.848 33.2513L128.828 33.2689L128.81 33.2875L100.734 61.3636C98.5638 63.5336 98.5638 67.3302 100.734 69.5002L128.81 97.5763C130.199 98.9652 130.199 101.496 128.81 102.884L103.304 128.39C101.915 129.779 99.3849 129.779 97.996 128.39L69.9199 100.314C67.7499 98.1442 63.9532 98.1442 61.7832 100.314L33.7072 128.39C32.3182 129.779 29.7879 129.779 28.399 128.39L2.89327 102.884C1.50433 101.496 1.50433 98.9652 2.89327 97.5763L30.9693 69.5002C33.1393 67.3302 33.1393 63.5336 30.9693 61.3636L2.89327 33.2875C1.50433 31.8986 1.50433 29.3682 2.89327 27.9793L28.399 2.47359C29.7879 1.08465 32.3182 1.08465 33.7072 2.47359L61.7832 30.5496C63.9532 32.7196 67.7499 32.7196 69.9199 30.5496L97.996 2.47359C99.3849 1.08465 101.915 1.08465 103.304 2.47359L128.81 27.9793C130.418 29.5878 130.362 31.8888 128.848 33.2513Z"
-              stroke="url(#paint0_linear_66_15292)" stroke-width="2" />
-          </svg>
-
-          <svg class="presentation__icons presentation__icons--2" width="99" height="82" viewBox="0 0 99 82" fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M48.082 1.97163L48.082 1.97165L48.0865 1.96414C48.8355 0.715796 50.6238 0.633165 51.5413 1.9895L97.6613 77.3532L97.6663 77.3612C98.5815 78.8255 97.5203 80.7278 95.9371 80.7278H49.8062H3.67521C2.09765 80.7278 1.01752 78.9509 1.95591 77.3452L48.082 1.97163Z"
-              stroke="url(#paint0_linear_75_2071)" stroke-width="2" />
-            <defs>
-              <linearGradient id="paint0_linear_75_2071" x1="0.612305" y1="40.8639" x2="99" y2="40.8639"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#F7941D" />
-                <stop offset="1" stop-color="#27AAE1" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <svg class="presentation__icons presentation__icons--3" width="129" height="268" viewBox="0 0 129 268"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 0V140L127.589 266.589" stroke="url(#paint0_linear_75_1248)" stroke-width="2" />
-            <defs>
-              <linearGradient id="paint0_linear_75_1248" x1="1" y1="266.589" x2="1.00001" y2="0"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#F7941D" />
-                <stop offset="1" stop-color="#27AAE1" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <svg class="presentation__icons presentation__icons--4" width="352" height="351" viewBox="0 0 352 351"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 0V180H181L351 350" stroke="url(#paint0_linear_64_4054)" stroke-width="2" />
-            <defs>
-              <linearGradient id="paint0_linear_64_4054" x1="1" y1="175" x2="351" y2="175"
-                gradientUnits="userSpaceOnUse">
-                <stop stop-color="#F7941D" />
-                <stop offset="1" stop-color="#27AAE1" />
-              </linearGradient>
-            </defs>
-          </svg>
         </div>
 
-        <p class="presentation__descr">Up-to-date knowledge from recognized market experts
+        <p class="presentation__descr element-animation show-below">Up-to-date knowledge from recognized market experts
           for beginners and practicing specialists.</p>
 
         <dl class="presentation__list">
-          <div>
-            <dd class="presentation__numb">600</dd>
+          <div class="presentation__item">
+            <dd class="presentation__numb" id="numb-courses">0</dd>
             <dt class="presentation__name">Courses</dt>
           </div>
-          <div>
-            <dd class="presentation__numb">82</dd>
+          <div class="presentation__item">
+            <dd class="presentation__numb" id="numb-leading">0</dd>
             <dt class="presentation__name">Leading teachers</dt>
           </div>
-          <div>
-            <dd class="presentation__numb">14 795</dd>
+          <div class="presentation__item">
+            <dd class="presentation__numb" id="numb-graduates">0</dd>
             <dt class="presentation__name">Graduates</dt>
           </div>
         </dl>
       </div>
     </section>
 
-    <section class="info">
+    <section class="info section" id="info">
       <div class="container">
         <ul class="info__cards">
-          <li class="info__card info__card--open-day">
-            <div class="info__date">
-              <span class="info__date-number">25</span>
-              <span class="info__date-month">November</span>
-            </div>
+          <li class="info__card info__card--open-day element-animation">
+            <div class="info__card-inner info__card-inner--open-day">
+              <div class="info__date">
+                <div class="info__date-wrap">
+                  <span class="info__date-number">25</span>
+                  <span class="info__date-month">November</span>
+                </div>
+                <h3 class="info__title info__title--open-day info__title--open-day-mobail">Open Day</h3>
+              </div>
 
-            <div class="info__descr">
-              <h3 class="info__title info__title--open-day">Open Day</h3>
-              <p class="info__text info__text--open-day">
-                We invite everyone to a free tour
-                into the world of in-demand professions and useful skills
+              <div class="info__descr">
+                <h3 class="info__title info__title--open-day">Open Day</h3>
+                <p class="info__text info__text--open-day">
+                  We invite everyone to a free tour
+                  into the world of in-demand professions and useful skills
+                </p>
+              </div>
+
+              <a class="info__link" href="#">
+                <svg class="info__icons">
+                  <use xlink:href="images/sprite.svg#shyvron-icon"></use>
+                </svg>
+                Sign up</a>
+            </div>
+          </li>
+
+          <li class="info__card info__card--programs element-animation">
+            <div class="info__card-inner info__card-inner--programs">
+              <h3 class="info__title">Studying programs</h3>
+              <p class="info__text info__text--programs">
+                In the list of our courses you can find a profession and activity to your liking, learn new things and
+                gain practical knowledge,
+                that will help you get your dream job.
+              </p>
+              <a class="info__link" href="#">
+                <svg class="info__icons info__icons--programs">
+                  <use xlink:href="images/sprite.svg#shyvron-icon"></use>
+                </svg>
+                More details</a>
+            </div>
+          </li>
+
+          <li class="info__card info__card--news element-animation">
+            <div class="info__card-inner info__card-inner--news">
+              <h3 class="info__title info__title--news">Academy News</h3>
+            </div>
+          </li>
+
+          <li class="info__card info__card--it element-animation">
+            <div class="info__card-inner info__card-inner--it">
+              <h3 class="info__title info__title--it">World of IT</h3>
+            </div>
+          </li>
+
+          <li class="info__card info__card--try element-animation">
+            <div class="info__card-inner info__card-inner--try">
+              <h3 class="info__title info__title--try">Try!</h3>
+              <p class="info__text">
+                Take the test and find out your abilities
+                in the field of information technology
               </p>
             </div>
-
-            <a class="info__link" href="#">
-              <svg class="info__icons">
-                <use xlink:href="images/sprite.svg#shyvron-icon"></use>
-              </svg>
-              Sign up</a>
-          </li>
-
-          <li class="info__card info__card--programs">
-            <h3 class="info__title">Studying programs</h3>
-            <p class="info__text info__text--programs">
-              In the list of our courses you can find a profession and activity to your liking, learn new things and
-              gain practical knowledge,
-              that will help you get your dream job.
-            </p>
-            <a class="info__link" href="#">
-              <svg class="info__icons info__icons--programs">
-                <use xlink:href="images/sprite.svg#shyvron-icon"></use>
-              </svg>
-              More details</a>
-          </li>
-
-          <li class="info__card info__card--news">
-            <h3 class="info__title info__title--news">Academy News</h3>
-          </li>
-
-          <li class="info__card info__card--it">
-            <h3 class="info__title info__title--it">World of IT</h3>
-          </li>
-
-          <li class="info__card info__card--try">
-            <h3 class="info__title">Try!</h3>
-            <p class="info__text">
-              Take the test and find out your abilities
-              in the field of information technology
-            </p>
           </li>
         </ul>
       </div>
     </section>
 
-    <section class="reviews">
-      <h2 class="reviews__title">Feedback from our students</h2>
+    <section class="reviews section" id="reviews">
+      <h2 class="reviews__title element-animation show-below">Feedback from our students</h2>
       <div class="swiper">
         <ul class="reviews__slider swiper-wrapper">
           <li class="reviews__card swiper-slide">
@@ -652,8 +764,8 @@
         <div class="swiper-pagination"></div>
       </div>
 
-      <svg class="reviews__icons reviews__icons--1" width="131" height="131" viewBox="0 0 131 131" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="reviews__icons reviews__icons--1 icon-rotate" width="131" height="131" viewBox="0 0 131 131"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="paint0_linear_66_15292" x1="0.851563" y1="65.4319" x2="131" y2="65.4319"
             gradientUnits="userSpaceOnUse">
@@ -666,8 +778,8 @@
           stroke="url(#paint0_linear_66_15292)" stroke-width="2" />
       </svg>
 
-      <svg class="reviews__icons reviews__icons--2" width="120" height="120" viewBox="0 0 120 120" fill="none"
-        xmlns="http://www.w3.org/2000/svg">
+      <svg class="reviews__icons reviews__icons--2 icon-rotate" width="120" height="120" viewBox="0 0 120 120"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M60 119C27.4614 119 1 92.5386 1 60C1 27.4614 27.4614 1 60 1C92.5386 1 119 27.4614 119 60C119 92.7185 92.5406 119 60 119Z"
           stroke="url(#paint0_linear_75_2070)" stroke-width="2" />
@@ -679,7 +791,7 @@
         </defs>
       </svg>
 
-      <svg class="reviews__icons reviews__icons--3" width="99" height="82" viewBox="0 0 99 82" fill="none"
+      <svg class="reviews__icons reviews__icons--3 icon-rotate" width="99" height="82" viewBox="0 0 99 82" fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path
           d="M48.082 1.97163L48.082 1.97165L48.0865 1.96414C48.8355 0.715796 50.6238 0.633165 51.5413 1.9895L97.6613 77.3532L97.6663 77.3612C98.5815 78.8255 97.5203 80.7278 95.9371 80.7278H49.8062H3.67521C2.09765 80.7278 1.01752 78.9509 1.95591 77.3452L48.082 1.97163Z"
@@ -719,13 +831,13 @@
 
     </section>
 
-    <section class="invitation">
+    <section class="invitation section" id="contacts">
       <div class="container">
-        <h2 class="invitation__title">Welcome to the Academy of the Future HOD</h2>
+        <h2 class="invitation__title element-animation show-below">Welcome to the Academy of the Future HOD</h2>
 
         <ul class="invitation__info">
           <li class="invitation__item">
-            <div class="invitation__img invitation__img--1"
+            <div class="invitation__img invitation__img--1 bounce-anim"
               style="background-image: url(images/invitation/invitation-1.png);"></div>
             <p class="invitation__text">
               Advanced Approach
@@ -733,7 +845,7 @@
             </p>
           </li>
           <li class="invitation__item">
-            <div class="invitation__img invitation__img--2"
+            <div class="invitation__img invitation__img--2 bounce-anim"
               style="background-image: url(images/invitation/invitation-2.png);"></div>
             <div class="invitation__img"></div>
             <p class="invitation__text">
@@ -742,7 +854,7 @@
             </p>
           </li>
           <li class="invitation__item">
-            <div class="invitation__img invitation__img--3"
+            <div class="invitation__img invitation__img--3 bounce-anim"
               style="background-image: url(images/invitation/invitation-3.png);"></div>
             <div class="invitation__img"></div>
             <p class="invitation__text">
@@ -750,7 +862,7 @@
             </p>
           </li>
           <li class="invitation__item">
-            <div class="invitation__img invitation__img--4"
+            <div class="invitation__img invitation__img--4 bounce-anim"
               style="background-image: url(images/invitation/invitation-4.png);"></div>
             <div class="invitation__img"></div>
             <p class="invitation__text">
@@ -761,14 +873,19 @@
 
         <div class="invitation__contact">
           <div class="invitation__contact-wrap">
-            <img class="invitation__owl" src="images/categories/owl.png" alt="owl">
-            <img class="invitation__border" src="images/invitation/border.png" alt="border">
-            <div class="invitation__content">
-              <h3 class="invitation__comment-title">Help with the choice?</h3>
-              <p class="invitation__comment-text">
-                Leave a request and our specialists will contact you and answer all your questions
-                and select the appropriate training option.
-              </p>
+            <div class="invitation__owl-wrap">
+              <img class="invitation__owl element-animation" src="images/categories/owl.png" alt="owl">
+            </div>
+
+            <div class="invitation__content element-animation">
+              <img class="invitation__border" src="images/invitation/border.png" alt="border">
+              <div class="invitation__content-wrap">
+                <h3 class="invitation__comment-title">Help with the choice?</h3>
+                <p class="invitation__comment-text">
+                  Leave a request and our specialists will contact you and answer all your questions
+                  and select the appropriate training option.
+                </p>
+              </div>
             </div>
           </div>
 
@@ -807,7 +924,7 @@
       </div>
     </section>
   </main>
-  <footer class="footer">
+  <footer class="footer ">
     <div class="container">
       <div class="footer__wrap">
         <div class="footer__contacts">
@@ -820,24 +937,24 @@
           <a class="footer__link footer__link--mail"
             href="mail:info@hodfutureacademy.gmail">info@hodfutureacademy.gmail</a>
 
-          <ul class="footer__social">
-            <li class="footer__social-item">
-              <svg class="footer__icon">
+          <ul class="social">
+            <li class="social__item">
+              <svg class="social__icon">
                 <use xlink:href="images/sprite.svg#inst-icon"></use>
               </svg>
             </li>
-            <li class="footer__social-item">
-              <svg class="footer__icon">
+            <li class="social__item">
+              <svg class="social__icon">
                 <use xlink:href="images/sprite.svg#fb-icon"></use>
               </svg>
             </li>
-            <li class="footer__social-item">
-              <svg class="footer__icon">
+            <li class="social__item">
+              <svg class="social__icon">
                 <use xlink:href="images/sprite.svg#youtube-icon"></use>
               </svg>
             </li>
-            <li class="footer__social-item">
-              <svg class="footer__icon">
+            <li class="social__item">
+              <svg class="social__icon">
                 <use xlink:href="images/sprite.svg#tg-icon"></use>
               </svg>
             </li>
@@ -878,7 +995,7 @@
               <li class="footer__item linck-animation">Soft skills</li>
             </ul>
           </div>
-          <div class="footer__categori">
+          <div class="footer__categori footer__categori--info">
             <h3 class="footer__title">For adults</h3>
             <ul class="footer__list">
               <li class="footer__item linck-animation">Unity game developer</li>
@@ -919,6 +1036,45 @@
       </div>
     </div>
   </footer>
+
+  <div class="popup" data-modal>
+    <button class="popup__cloze">
+      <svg class="popup__svg-cloze">
+        <use xlink:href="images/sprite.svg#cloze-icon"></use>
+      </svg>
+    </button>
+    <form class="form form--popup">
+      <fieldset>
+        <label class="form__label" for="name"></label>
+        <input class="form__input" type="text" id="name-poup" name="name" placeholder="Your name" required>
+
+        <div class="form__wrap form__wrap--popup">
+
+          <div class="form__inner">
+            <label class="form__label" for="phone"></label>
+            <input class="form__input" type="text" id="phone-popup" name="phone" placeholder="Your phone number"
+              required>
+          </div>
+          <div class="form__inner">
+            <label class="form__label" for="mail"></label>
+            <input class="form__input" type="text" id="mail-popup" name="mail" placeholder="Your e-mail" required>
+          </div>
+        </div>
+
+        <div class="form__wrap form__wrap--popup">
+          <p class="form__agreement form__agreement--popup">
+            By clicking the button I agree
+            for the processing of personal data
+            and with the rules for using the Platform
+          </p>
+
+          <button class="form__btn" type="submit">Send</button>
+        </div>
+
+      </fieldset>
+    </form>
+  </div>
+
 </body>
 <script src="js/main.min.js"></script>
 

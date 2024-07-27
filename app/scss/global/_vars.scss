@@ -18,6 +18,16 @@ $try-color: #FFE38E;
 $input-bg: rgba(0, 9, 60, .1);
 $btn-color: #F7941D;
 
+$breakpoints: (
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1230px
+);
+
+$maxWidth: 1920;
+$maxWidthContainer: 1210;
+
 %montserrat-400 {
   font-family: 'Montserrat';
   font-weight: 400;
@@ -43,4 +53,15 @@ $btn-color: #F7941D;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+%show-below-start {
+  transition: transform .8s, opacity .8s;
+  transform: translate(0, 30px);
+  opacity: 0;
+}
+
+%show-below-finish {
+  transform: translate(0, 0);
+  opacity: 1;
 }

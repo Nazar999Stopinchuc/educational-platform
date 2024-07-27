@@ -17,6 +17,15 @@ body {
 
   color: $accent-text-color;
   background-color: $body-background-color;
+
+  @include mq ('tablet') {
+    background-color: $accent-title-color;
+  }
+}
+
+.hide {
+  opacity: 1;
+  animation: hide-elem 2s forwards;
 }
 
 .sr-only {
@@ -42,6 +51,11 @@ body {
   margin: 0 auto;
 }
 
+.section {
+  @include adaptiv-value ('padding-top', 100, 30, 1);
+  @include adaptiv-value ('padding-bottom', 100, 30, 1);
+}
+
 .header-icons {
   fill: none;
   stroke: $accent-text-color;
@@ -56,8 +70,184 @@ body {
   transition: stroke 0.3s;
 }
 
+.lock {
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 200;
+  }
+}
+
+.scroll-up {
+  position: fixed;
+  display: none;
+  @include adaptiv-value ('height', 70, 44, 1);
+  @include adaptiv-value ('width', 70, 44, 1);
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  background-color: rgba($gradient-to, 0.6);
+  box-shadow: 0 0 20px 10px rgba($gradient-to, 0.8);
+  filter: blur(2px);
+  transition: opacity .3s, ;
+
+  @include mq ('phone') {
+    &:hover {
+      scale: 1;
+    }
+
+    &:active {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+
+  &:hover {
+    scale: 1.1;
+  }
+
+  &:active {
+    opacity: .8;
+    scale: .9;
+  }
+
+  &__icon {
+    position: absolute;
+    @include adaptiv-value ('height', 40, 30, 1);
+    @include adaptiv-value ('width', 40, 30, 1);
+    top: 50%;
+    left: 50%;
+    fill: none;
+    stroke: $gradient-from;
+    transition: transform .3s;
+
+    &--1 {
+      transform: translate(-50%, -10%) rotateZ(-90deg);
+    }
+
+    &--2 {
+      transform: translate(-50%, -50%) rotateZ(-90deg);
+    }
+
+    &--3 {
+      transform: translate(-50%, -90%) rotateZ(-90deg);
+    }
+  }
+}
+
+.icon-rotate {
+  animation: rotate 8s linear infinite;
+}
+
+.show-below {
+  @extend %show-below-start;
+
+  &.show-animation {
+    @extend %show-below-finish;
+  }
+}
+
+.bounce-anim {
+  animation: bounceAnimation 2s infinite;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.star {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  background-color: $stars-color;
+  box-shadow: 0 0 2px 1px $stars-color;
+  border-radius: 50%;
+  animation: flicker infinite alternate 5s;
+}
+
+.linck-animation {
+  transition: color .3s;
+
+  &:hover {
+    background-image: linear-gradient(to right, $gradient-from, $gradient-to);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &:hover .header-icons {
+    stroke: $gradient-from;
+  }
+
+  &:active {
+    background-image: linear-gradient(to left, $gradient-from, $gradient-to);
+    background-clip: text;
+    color: transparent;
+  }
+
+  &:active .header-icons {
+    stroke: $gradient-to;
+  }
+}
+
+.btn-animation {
+  &::before {
+    transition: background 0.3s, height 0.8s, width 0.8s;
+  }
+
+  &:hover::before {
+    height: 110%;
+    width: 110%;
+  }
+
+  &:active::before {
+    background: linear-gradient(to left, $gradient-from, $gradient-to);
+  }
+}
+
+.popup {
+  position: fixed;
+  display: none;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  inset: 0;
+  background: radial-gradient(circle, rgba($gradient-from, .9),
+      rgba($gradient-to, .9));
+  z-index: 500;
+
+  &__cloze {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 50px;
+    width: 50px;
+
+    &:hover .popup__svg-cloze {
+      stroke: $gradient-from;
+    }
+  }
+
+  &__svg-cloze {
+    position: absolute;
+    stroke-width: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: $symbol-color;
+    height: 40px;
+    width: 40px;
+    transition: stroke .3s;
+  }
+}
+
 .swiper {
   padding: 60px 0;
+}
+
+.swiper-slide {
+  max-width: 100%;
 }
 
 .swiper-horizontal>.swiper-pagination-progressbar,

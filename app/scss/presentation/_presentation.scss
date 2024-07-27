@@ -1,16 +1,31 @@
 .presentation {
-  padding-top: 100px;
+  overflow: hidden;
+
+  &__video-wrap {
+    @extend %show-below-start;
+
+    &.show-animation {
+      @extend %show-below-finish;
+    }
+  }
 
   &__video {
     position: relative;
-    height: 440px;
-    width: 780px;
+    aspect-ratio: 780/440;
+    max-height: 440px;
+    max-width: 780px;
     border-radius: 20px;
     @extend %bg;
     margin: 0 auto 115px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform .8s, opacity .8s, scale .8s;
+
+    @include mq ('tablet') {
+      margin-bottom: 30px;
+      border-radius: 6px;
+    }
 
     &::before {
       content: '';
@@ -34,6 +49,16 @@
     transition: scale 0.3s;
     z-index: 200;
 
+    @include mq ('tablet') {
+      height: 82px;
+      width: 83px;
+    }
+
+    @include mq ('phone') {
+      height: 62px;
+      width: 63px;
+    }
+
     &:hover {
       scale: 1.2;
     }
@@ -54,6 +79,16 @@
     align-items: center;
     justify-content: center;
 
+    @include mq ('tablet') {
+      height: 80px;
+      width: 80px;
+    }
+
+    @include mq ('phone') {
+      height: 60px;
+      width: 60px;
+    }
+
     &::after {
       content: '';
       @extend %bg;
@@ -64,25 +99,50 @@
       left: 55%;
       transform: translate(-50%, -50%);
       background-image: url(../images/presentation/triangle.png);
+
+      @include mq ('tablet') {
+        height: 42px;
+        width: 35px;
+      }
+
+      @include mq ('phone') {
+        height: 30px;
+        width: 30px;
+      }
     }
   }
 
   &__descr {
     @extend %montserrat-700;
-    font-size: 24px;
-    margin-bottom: 42px;
+    @include adaptiv-value ('font-size', 24, 18, 1);
+    @include adaptiv-value ('margin-bottom', 42, 20, 1);
     max-width: 750px;
   }
 
   &__list {
     display: flex;
     align-items: center;
-    gap: 120px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include mq ('tablet') {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-top: 120px;
+    min-width: 320px;
   }
 
   &__numb {
-    position: relative;
-    font-size: 86px;
+    position: absolute;
+    top: 0;
+    @include adaptiv-value ('font-size', 86, 64, 1);
     margin-bottom: 5px;
     @extend %montserrat-700;
     background: linear-gradient(to right,
@@ -100,6 +160,11 @@
   &__icons {
     position: absolute;
     z-index: -1;
+    transition: all .8s;
+
+    @include mq ('phone') {
+      display: none;
+    }
 
     &--1,
     &--2 {
@@ -107,32 +172,71 @@
     }
 
     &--1 {
-      height: 230px;
-      width: 230px;
-      top: 80%;
-      left: 90%;
+      @include adaptiv-value ('hight', 230, 100, 1);
+      @include adaptiv-value ('width', 230, 100, 1);
+      transform: translate(0, 0);
+      top: 35%;
+      left: 50%;
+
+      &.show-animation {
+        top: 80%;
+        left: 90%;
+      }
+
+      @include mq ('tablet-2') {
+        top: 90%;
+        left: 60%;
+      }
     }
 
     &--2 {
-      height: 135px;
-      width: 165px;
-      top: -18%;
-      left: -11%;
+      @include adaptiv-value ('hight', 135, 70, 1);
+      @include adaptiv-value ('width', 165, 100, 1);
+      top: 35%;
+      left: 50%;
+
+      &.show-animation {
+        top: -10%;
+        left: -11%;
+      }
+
+      @include mq ('tablet-2') {
+        top: -18%;
+        left: 20%;
+      }
     }
 
     &--3 {
-      height: 130px;
-      width: 230px;
-      top: 70%;
-      left: -23%;
+      @include adaptiv-value ('hight', 130, 80, 1);
+      @include adaptiv-value ('width', 230, 170, 1);
       transform: rotateZ(-90deg);
+      top: 35%;
+      left: 50%;
+
+      &.show-animation {
+        top: 70%;
+        left: -23%;
+      }
+
+      @include mq ('tablet-2') {
+        display: none;
+      }
     }
 
     &--4 {
-      height: 350px;
-      width: 350px;
-      top: -15%;
-      left: 85%;
+      @include adaptiv-value ('hight', 350, 200, 1);
+      @include adaptiv-value ('width', 350, 200, 1);
+      top: 35%;
+      left: 50%;
+
+      &.show-animation {
+        top: -15%;
+        left: 75%;
+      }
+
+      @include mq ('tablet-2') {
+        display: none;
+      }
     }
   }
 }

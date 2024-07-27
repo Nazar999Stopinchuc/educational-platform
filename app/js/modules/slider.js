@@ -2,18 +2,27 @@ import Swiper from 'swiper/bundle';
 
 const slider = () => {
   const swiper = new Swiper('.swiper', {
-    slidesPerView: 6,
+    slidesPerView: 'auto',
     spaceBetween: 30,
+    loop: true,
     slidesPerGroup: 1,
+    centeredSlides: true,
+    initialSlide: 1,
     speed: 800,
     pagination: {
       el: ".swiper-pagination",
       type: "progressbar",
     },
     autoplay: {
-      delay: 3000,
-      stopOnLastSlide: true,
+      delay: 0,
+      stopOnLastSlide: false,
       disableOnInteraction: false,
+    },
+    autoplay: true,
+    breakpoints: {
+      768: {
+        spaceBetween: 20,
+      },
     }
   });
 
@@ -26,6 +35,8 @@ const slider = () => {
   mySlider.addEventListener('mouseleave', () => {
     swiper.autoplay.start();
   });
+
+
 }
 
 export default slider;

@@ -3,38 +3,45 @@
   color: $accent-title-color;
   padding: 70px 0;
 
+  @include mq ('tablet') {
+    padding: 50px 0;
+  }
+
   &__wrap {
     display: flex;
     align-items: center;
     gap: 85px;
+
+    @include mq ('desktop') {
+      justify-content: space-around;
+    }
+
+    @include mq ('phone') {
+      justify-content: center;
+    }
   }
 
   &__contacts {
     display: flex;
     flex-direction: column;
     gap: 15px;
+
+    @include mq ('phone') {
+      width: 100%;
+    }
   }
 
   &__logo {
     margin-bottom: 23px;
+
+    @include mq ('phone') {
+      display: none;
+    }
   }
 
   &__link {
     font-size: 14px;
     @extend %montserrat-500;
-  }
-
-  &__social {
-    margin: 20px 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  &__icon {
-    height: 21px;
-    width: 26px;
-    fill: $accent-title-color;
   }
 
   &__copy {
@@ -45,6 +52,26 @@
   &__categories {
     display: flex;
     gap: 60px;
+
+    @include mq ('phone') {
+      display: none;
+    }
+  }
+
+  &__categori {
+    @include mq ('desktop') {
+      display: none;
+    }
+
+    &--info {
+      @include mq ('desktop') {
+        display: block;
+      }
+
+      @include mq ('phone') {
+        display: none;
+      }
+    }
   }
 
   &__title {
@@ -60,5 +87,32 @@
     font-size: 14px;
     @extend %montserrat-500;
     margin-bottom: 15px;
+  }
+}
+
+.social {
+  margin: 20px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include mq ('phone') {
+    justify-content: space-around;
+  }
+
+  &.social--menu-mob {
+    gap: 30px;
+  }
+
+  &__icon {
+    height: 21px;
+    width: 26px;
+    fill: $accent-title-color;
+
+    &--menu-mob {
+      fill: $accent-bg-color;
+      height: 31px;
+      width: 36px;
+    }
   }
 }

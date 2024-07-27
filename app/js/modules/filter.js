@@ -20,8 +20,8 @@ const filter = () => {
           item.style.display = 'none';
 
           if (item.classList.contains(targetData)) {
-            item.style.display = 'block';  
-          };
+            item.style.display = 'block';
+          }
         });
       }
     });

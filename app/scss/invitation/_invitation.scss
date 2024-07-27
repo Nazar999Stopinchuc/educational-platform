@@ -1,29 +1,36 @@
 .invitation {
-  padding: 120px 0 250px;
+  padding: 120px 0 0px;
+  margin-bottom: -25px;
   position: relative;
+
+  @include mq ('tablet') {
+    padding: 50px 0;
+  }
 
   &__title {
     @extend %montserrat-700;
-    font-size: 36px;
-    margin-bottom: 60px;
+    @include adaptiv-value ('font-size', 36, 23, 1);
+    @include adaptiv-value ('margin-bottom', 60, 16, 1);
     text-align: center;
   }
 
   &__info {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 150px;
+    @include adaptiv-value ('margin-bottom', 150, 50, 1);
+    gap: 15px;
+
+    @include mq ('tablet') {
+      justify-content: space-around;
+    }
   }
 
   &__item {
     position: relative;
-    max-width: 280px;
-    padding-top: 80px;
+    @include adaptiv-value ('max-width', 280, 145, 1);
+    @include adaptiv-value ('padding-top', 80, 60, 1);
     @extend %montserrat-500;
-
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
   }
 
   &__img {
@@ -31,8 +38,6 @@
     @extend %bg;
     top: 0;
     left: 0;
-    height: 60px;
-    width: 60px;
 
     &--1 {
       height: 60px;
@@ -40,34 +45,43 @@
     }
 
     &--2 {
+      animation-delay: .1s;
       height: 50px;
       width: 50px;
     }
 
     &--3 {
+      animation-delay: .2s;
       height: 45px;
       width: 55px;
     }
 
     &--4 {
+      animation-delay: .3s;
       height: 55px;
       width: 40px;
     }
   }
 
   &__text {
-    font-size: 18px;
+    @include adaptiv-value ('font-size', 18, 12, 1);
   }
 
   &__contact {
-    position: absolute;
-    bottom: -5%;
-    // transform: translateY(100px);
+    position: relative;
     display: flex;
     justify-content: space-between;
     padding: 40px;
     background-color: $accent-title-color;
     border-radius: 20px;
+
+    @include mq ('tablet-2') {
+      flex-direction: column;
+    }
+
+    @include mq ('phone') {
+      padding: 10px;
+    }
 
     &::before {
       content: "";
@@ -85,36 +99,116 @@
 
   &__contact-wrap {
     position: relative;
+    display: flex;
+    align-items: center;
     margin-right: 50px;
     min-height: 200px;
-    min-width: 600px;
+    flex-grow: 1;
+
+    @include mq ('desktop') {
+      margin-right: 0;
+    }
+
+    @include mq ('tablet-2') {
+      justify-content: center;
+    }
+  }
+
+  &__owl-wrap {
+    flex-basis: 25%;
+
+    @include mq ('phone') {
+      flex-basis: 5%;
+    }
   }
 
   &__owl {
     position: absolute;
-    height: 310px;
-    width: 275px;
-    top: 0;
-    left: -20%;
+    @include adaptiv-value ('width', 275, 120, 1);
+    @include adaptiv-value ('heigth', 310, 136, 1);
+
+    transform: translate(-80%, -30%);
+    opacity: 0;
+    transition: opacity 0.8s, transform 0.8s;
+    z-index: 200;
+
+    @include mq ('tablet-2') {
+      transform: translate(0%, -50%);
+    }
+
+    @include mq ('tablet') {
+      transform: translate(-20%, -50%);
+    }
+
+    @include mq ('phone') {
+      transform: translate(-85%, -30%);
+    }
+
+    &.show-animation {
+      opacity: 1;
+      transform: translate(-45%, -55%);
+
+      @include mq ('phone') {
+        transform: translate(-85%, -30%);
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    max-height: 190px;
+    max-width: 360px;
+
+    right: 50%;
+    border-radius: 50% 50% 50% 0%;
+    scale: 0.2;
+    opacity: 0;
+    transition: all .8s;
+    overflow: hidden;
+    transition-delay: .3s;
+
+
+    &.show-animation {
+      top: 0;
+      right: 0;
+      opacity: 1;
+      scale: 1;
+      border-radius: 0;
+    }
+
+    @include mq ('phone') {
+      flex-basis: 80%;
+    }
   }
 
   &__border {
     position: absolute;
-    top: 0;
-    right: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 
-  &__content {
-    position: absolute;
-    height: 150px;
-    width: 360px;
-    top: 15%;
-    right: 0;
+  &__content-wrap {
+    position: relative;
+    padding: 20px 20px 20px 50px;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+  }
+
+  &__comment-text {
+    @include mq ('phone') {
+      font-size: 12px;
+    }
   }
 }
 
 .form {
-  max-width: 440px;
+  width: 440px;
+
+  @include mq ('tablet-2') {
+    width: 100%;
+  }
 
   & fieldset {
     border-color: transparent;
@@ -128,8 +222,23 @@
     margin-bottom: 20px;
     padding: 20px 15px;
     font-size: 16px;
+    border: 2px solid transparent;
+    transition: border-color .3s;
+
+    &:hover {
+      border-color: $btn-color;
+    }
+
+    &:focus {
+      border-color: $btn-color;
+    }
+
+    &:focus.form__input::placeholder {
+      color: $btn-color;
+    }
 
     &::placeholder {
+      transition: color .3s;
       font-size: 14px;
     }
   }
@@ -139,14 +248,34 @@
     justify-content: space-between;
     gap: 20px;
 
+    @include mq ('tablet-2') {
+      flex-direction: column;
+      gap: 0;
+    }
+
     &.input {
       margin-right: 20px;
+    }
+
+    &--popup {
+      flex-direction: column;
+      gap: 0;
     }
   }
 
   &__agreement {
     font-size: 10px;
     max-width: 150px;
+
+    @include mq ('tablet-2') {
+      min-width: 100%;
+      margin-bottom: 20px;
+    }
+
+    &--popup {
+      min-width: 100%;
+      margin-bottom: 20px;
+    }
   }
 
   &__btn {
@@ -156,7 +285,27 @@
     padding: 12px 55px;
     background-color: $btn-color;
     border-radius: 6px;
+    border: 2px solid $btn-color;
+    transition: color .3s, background-color .3s, scale .3s;
+
+    &:hover {
+      background-color: $accent-title-color;
+      color: $btn-color;
+    }
+
+    &:active {
+      scale: .95;
+    }
   }
 
+  &--popup {
+    background-color: $accent-title-color;
+    padding: 30px;
+    border-radius: 20px;
+    width: 600px;
 
+    @include mq ('tablet-2') {
+      width: 100%;
+    }
+  }
 }
